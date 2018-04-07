@@ -9,7 +9,7 @@ for line in range(0,lines):
     i = input()
     minimum, letters = i.split(" ")
     minimum = int(minimum)
-    print(i)
+    #print(i)
     lastStart = -1
     for letter in re.finditer("C",letters):
         thisStart = letter.start()
@@ -34,7 +34,7 @@ indexes in one swap
 1 swap: divide the first occurance of the largest index by 2
 subtract from damage
     """
-    print(shots)
+    #print(shots)
     swaps = 0
     while len(shots)>0 and (damage > minimum) and (shots[-1] > 1):
         damage -= (shots[-1]//2)
