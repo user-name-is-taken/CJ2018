@@ -8,6 +8,7 @@ for line in range(0,lines):
     shots = []
     i = input()
     minimum, letters = i.split(" ")
+    minimum = int(minimum)
     print(i)
     lastStart = -1
     for letter in re.finditer("C",letters):
@@ -33,5 +34,5 @@ for line in range(0,lines):
         del(shots[-1])
         swaps += 1
     
-    
+    print("swaps: ",swaps)
         
