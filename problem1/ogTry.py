@@ -1,8 +1,8 @@
 import re
 
 lines = int(input())
-for line in range(0,lines):
-    charges = 0
+for line in range(lines):
+    #print("hi")
     cur_shot = 1
     damage = 0
     shots = []
@@ -11,23 +11,17 @@ for line in range(0,lines):
     minimum = int(minimum)
     #print(i)
     lastStart = -1
-    for letter in re.finditer("C",letters):
-        thisStart = letter.start()
-        deltaShots = (thisStart - lastStart - 1)#charges in a row?
-        damage += cur_shot * deltaShots
-        shots += ([cur_shot,] * deltaShots)
-        cur_shot = cur_shot << 1
-        charges += 1
-        lastStart = thisStart
-    #add for shots at the end of the line here
-    thisStart = len(letters)
-    deltaShots = (thisStart - lastStart - 1)#charges in a row?
-    damage += cur_shot * deltaShots
-    shots += ([cur_shot,] * deltaShots)
-    lastStart = thisStart
+    for letter in letters:
+        if letter == "S":
+            damage += cur_shot
+            shots.append(cur_shot)
+        else:
+            cur_shot = cur_shot << 1
 
-    print(damage, " ", letters, " ", shots," ",cur_shot)
+    #print(damage, " ", letters, " ", shots," ",cur_shot)
+    
 
+    
     #performs swaps
     """
 problem: swaping one position is a swap, you can't swap multiple

@@ -5,7 +5,7 @@ for thisCase in range(cases):
     count = input()
     
     MainList = input().split(" ")
-    print(MainList, count, cases)
+    #print(MainList, count, cases)
     L1 = sorted(MainList[::2])
     L2 = sorted(MainList[1::2])
 

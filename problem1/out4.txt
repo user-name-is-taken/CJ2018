@@ -1,12 +1,18 @@
+hi
 2   CS   [2]   2
 Case # 1 :  1
+hi
 2   CS   [2]   2
 Case # 2 :  0
+hi
 2   SS   [1, 1]   1
 case # 3 : IMPOSSIBLE
+hi
 9   SCCSSC   [1, 4, 4]   8
 Case # 4 :  2
+hi
 0   CC   []   4
 Case # 5 :  0
+hi
 10   CSCSS   [2, 4, 4]   4
 Case # 6 :  5
