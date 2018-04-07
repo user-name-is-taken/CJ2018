@@ -1,7 +1,7 @@
 import re
 
 lines = int(input())
-for line in range(0,lines):
+for line in range(lines):
     charges = 0
     cur_shot = 1
     damage = 0
