@@ -30,13 +30,17 @@ for line in range(0,lines):
     """
 problem: swaping one position is a swap, you can't swap multiple
 indexes in one swap
+
+1 swap: divide the first occurance of the largest index by 2
+subtract from damage
     """
     print(shots)
     swaps = 0
     while len(shots)>0 and (damage > minimum) and (shots[-1] > 1):
-        damage -= (shots[-1]-1)
-        del(shots[-1])
+        damage -= (shots[-1]//2)
+        shots[-1]/=2
         swaps += 1
+        shots = sorted(shots)
     if(damage > minimum):
         print("case #",line+1,": IMPOSSIBLE")
     else:
