@@ -27,12 +27,18 @@ for line in range(0,lines):
     lastStart = thisStart
 
     #performs swaps
+    """
+problem: swaping one position is a swap, you can't swap multiple
+indexes in one swap
+    """
     print(shots)
     swaps = 0
-    while (damage > minimum) and (shots[-1] > 1):
+    while len(shots)>0 and (damage > minimum) and (shots[-1] > 1):
         damage -= (shots[-1]-1)
         del(shots[-1])
         swaps += 1
-    
-    print("swaps: ",swaps)
+    if(damage > minimum):
+        print("case #",line+1,": IMPOSSIBLE")
+    else:
+        print("Case #",line+1,": ",swaps)
         
