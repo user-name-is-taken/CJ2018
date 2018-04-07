@@ -1,0 +1,10 @@
+abcdef
+
+a<c
+b<d
+c<e
+a<e
+d<f
+b<f
+
+basically sorts the two lists separately
