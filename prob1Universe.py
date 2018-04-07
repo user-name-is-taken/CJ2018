@@ -9,7 +9,7 @@ for line in range(0,lines):
     i = input()
     minimum, letters = i.split(" ")
     minimum = int(minimum)
-    print(i)
+    #print(i)
     lastStart = -1
     for letter in re.finditer("C",letters):
         thisStart = letter.start()
@@ -27,12 +27,22 @@ for line in range(0,lines):
     lastStart = thisStart
 
     #performs swaps
-    print(shots)
+    """
+problem: swaping one position is a swap, you can't swap multiple
+indexes in one swap
+
+1 swap: divide the first occurance of the largest index by 2
+subtract from damage
+    """
+    #print(shots)
     swaps = 0
-    while (damage > minimum) and (shots[-1] > 1):
-        damage -= (shots[-1]-1)
-        del(shots[-1])
+    while len(shots)>0 and (damage > minimum) and (shots[-1] > 1):
+        damage -= (shots[-1]//2)
+        shots[-1]/=2
         swaps += 1
-    
-    print("swaps: ",swaps)
+        shots = sorted(shots)
+    if(damage > minimum):
+        print("case #",line+1,": IMPOSSIBLE")
+    else:
+        print("Case #",line+1,": ",swaps)
         
